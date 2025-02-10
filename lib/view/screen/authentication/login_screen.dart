@@ -76,6 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
             Consumer<AuthenticationController>(
               builder: (context, providerObj, child) {
+                print("Counter is rebuild");
                 return Text("${providerObj.counter}");
               }
             ),
