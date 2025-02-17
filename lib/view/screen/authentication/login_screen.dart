@@ -61,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 return ElevatedButton(
                   onPressed: () {
                     // step 4: call login function
-                    providerObj.Login();
+                    providerObj.Login(context);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors
