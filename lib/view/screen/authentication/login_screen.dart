@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:provider/provider.dart';
 import 'package:state_menagment/controller/authentication_controller/login_provider.dart';
 
@@ -30,7 +31,6 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login'),
-
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -68,18 +68,20 @@ class _LoginScreenState extends State<LoginScreen> {
                         .amberAccent, // Set the button color to amber accent
                   ),
                   child: providerObj.isLoading
-                      ? const CircularProgressIndicator()
+                      ? LoadingAnimationWidget.waveDots(
+                          color: Colors.white,
+                          size: 20,
+                        )
                       : const Text('Login'),
                 );
               },
             ),
 
             Consumer<AuthenticationController>(
-              builder: (context, providerObj, child) {
-                print("Counter is rebuild");
-                return Text("${providerObj.counter}");
-              }
-            ),
+                builder: (context, providerObj, child) {
+              print("Counter is rebuild");
+              return Text("${providerObj.counter}");
+            }),
 
             ElevatedButton(
               onPressed: () {
@@ -87,12 +89,9 @@ class _LoginScreenState extends State<LoginScreen> {
               },
               child: const Text('Increment'),
             ),
-
           ],
         ),
-
       ),
-
     );
   }
 }

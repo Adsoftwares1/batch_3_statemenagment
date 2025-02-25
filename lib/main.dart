@@ -7,6 +7,8 @@ import 'package:state_menagment/firebase_options.dart';
 import 'package:state_menagment/view/screen/authentication/login_screen.dart';
 import 'package:state_menagment/view/screen/file_stroing_firebase_storage/add_record.dart';
 import 'package:state_menagment/view/screen/file_stroing_firebase_storage/get_records.dart';
+import 'package:state_menagment/view/screen/google_map/google_map_markers.dart';
+import 'package:state_menagment/view/screen/google_map/ploy_line_draw.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,7 +43,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          home: GetAllRecords(),
+          home: DrawPolyline(),
         ));
   }
 }

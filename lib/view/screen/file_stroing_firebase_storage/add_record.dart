@@ -70,11 +70,16 @@ class _AddUSerInformationFirestoreState
             Consumer<FileStroingProvider>(
                 builder: (context, providerObject, child) {
               return ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xffa3361f),
+                  ),
                   onPressed: () async {
                     providerObject.addRecord(nameController.text,
                         emailController.text, providerObject.profileImage!);
                   },
-                  child: providerObject.isLoading ? CircularProgressIndicator() : Text("Add Record"));
+                  child: providerObject.isLoading
+                      ? CircularProgressIndicator()
+                      : Text("Add Record"));
             }),
           ],
         ),
